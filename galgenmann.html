@@ -1,0 +1,264 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Galgenmännchen</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="main-style.css">
+
+	<script>
+	
+
+function linie(leben)
+{
+ct.beginPath();
+switch(leben) 
+{
+case 0: {ct.moveTo(150,140);ct.lineTo(125,155);
+ct.font = "italic 30pt Arial";
+ct.strokeText("GAME OVER", 20, 150);
+ausbstTbl();}
+case 1: {ct.moveTo(150,140);ct.lineTo(175,155);}
+case 2: {ct.moveTo(150,180);ct.lineTo(170,220);}
+case 3: {ct.moveTo(150,180);ct.lineTo(130,220);}
+case 4: {ct.lineTo(150,180);}
+case 5: {ct.arc(150,120,15,1.57,3*Math.PI);}
+case 6: {ct.moveTo(150,50);ct.lineTo(150,105);}
+case 7: {ct.moveTo(25,50);ct.lineTo(150,50);}
+case 8: {ct.moveTo(25,250);ct.lineTo(25,50);}
+}
+ct.stroke();
+}
+</script>
+</head>
+
+
+<body >
+    <div class="container">
+<div id="header">
+    <h1>GALGENMÄNNCHEN</h1>
+    <nav>
+<ul class="menu">
+                <li><a href="#">Regeln</a></li>
+                <li><a href="#">Neues Spiel</a></li>
+               
+</ul>
+    </nav>
+</div>
+<div class="topcontent">
+        <div id="ausgabe"></div>
+    <div id="leben">Leben: 9</div>
+</div>
+
+
+
+
+   
+<div class="content">
+
+<div class="canvas">
+<canvas id="idCanvas" width="300" height="300"></canvas>
+</div>
+<div class="tast">
+<table border="0" width="580" height="300" cellpadding="0" cellspacing="0">
+        
+<tbody>
+    <tr>
+        <td><input class="button" id="A" onclick="hinzufuegen('A')" type="button" value="A" width="30"/><td>
+        <td><input class="button" id="B" onclick="hinzufuegen('B')" type="button" value="B" width="30"/><td>
+        <td><input class="button" id="C" onclick="hinzufuegen('C')" type="button" value="C" width="30"/><td>
+        <td><input class="button" id="D" onclick="hinzufuegen('D')" type="button" value="D" width="30"/><td>   
+        <td><input class="button" id="E" onclick="hinzufuegen('E')" type="button" value="E" width="30"/><td>
+        <td><input class="button" id="F" onclick="hinzufuegen('F')" type="button" value="F" width="30"/><td>
+        <td><input class="button" id="G" onclick="hinzufuegen('G')" type="button" value="G" width="30"/><td>
+        <td><input class="button" id="H" onclick="hinzufuegen('H')" type="button" value="H" width="30"/><td>
+        <td><input class="button" id="I" onclick="hinzufuegen('I')" type="button" value="I" width="30"/><td>
+        <td><input class="button" id="J" onclick="hinzufuegen('J')" type="button" value="J" width="30"/><td>      
+    </tr>
+    <tr>
+            <td><input class="button" id="K" onclick="hinzufuegen('K')" type="button" value="K" width="30"/><td>
+            <td><input class="button" id="L" onclick="hinzufuegen('L')" type="button" value="L" width="30"/><td>
+            <td><input class="button" id="M" onclick="hinzufuegen('M')" type="button" value="M" width="30"/><td>
+            <td><input class="button" id="N" onclick="hinzufuegen('N')" type="button" value="N" width="30"/><td>   
+            <td><input class="button" id="O" onclick="hinzufuegen('O')" type="button" value="O" width="30"/><td>
+            <td><input class="button" id="P" onclick="hinzufuegen('P')" type="button" value="P" width="30"/><td>
+            <td><input class="button" id="Q" onclick="hinzufuegen('Q')" type="button" value="Q" width="30"/><td>
+            <td><input class="button" id="R" onclick="hinzufuegen('R')" type="button" value="R" width="30"/><td>
+            <td><input class="button" id="S" onclick="hinzufuegen('S')" type="button" value="S" width="30"/><td>
+            <td><input class="button" id="T" onclick="hinzufuegen('T')" type="button" value="T" width="30"/><td>      
+    </tr>
+    <tr>
+            <td><input class="button" id="U" onclick="hinzufuegen('U')" type="button" value="U" width="30"/><td>
+            <td><input class="button" id="V" onclick="hinzufuegen('V')" type="button" value="V" width="30"/><td>
+            <td><input class="button" id="W" onclick="hinzufuegen('W')" type="button" value="W" width="30"/><td>
+            <td><input class="button" id="X" onclick="hinzufuegen('X')" type="button" value="X" width="30"/><td>   
+            <td><input class="button" id="Y" onclick="hinzufuegen('Y')" type="button" value="Y" width="30"/><td>
+            <td><input class="button" id="Z" onclick="hinzufuegen('Z')" type="button" value="Z" width="30"/><td>
+            <td><input class="button" id="Ä" onclick="hinzufuegen('Ä')" type="button" value="Ä" width="30"/><td>
+            <td><input class="button" id="Ö" onclick="hinzufuegen('Ö')" type="button" value="Ö" width="30"/><td>
+            <td><input class="button" id="Ü" onclick="hinzufuegen('Ü')" type="button" value="Ü" width="30"/><td>
+            <td><input class="button" id="ß" onclick="hinzufuegen('ß')" type="button" value="ß" width="30"/><td>      
+    </tr>    
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="contentbottom">
+     <button class="button1" onclick='tiere()'><img src="tiere.png" alt="Tiere" style="width:200px;" title="Tiere"></br>TIERE</button>
+     <button class="button1" onclick='pflanzen()'><img src="pflanzen.png" alt="Pflanzen" style="width:200px;"></br>PFLANZEN</button>
+     <button class="button1" onclick='obst()'><img src="obst.png" alt="Pflanzen" style="width:200px; "></br>OBST</button>
+      <button class="button1" onclick='others()'><img src="berge.png" alt="Natur" style="width:200px;"></br>NATUR</button>
+
+
+    </div>
+<div class="footer">&copy; Podlubnaja</div>
+
+    </div>
+
+
+
+<script>
+var c =  document.getElementById("idCanvas");
+var ct = c.getContext("2d");
+ct.fillStyle ="#f0f0f0";
+ct.lineWidth = 1;
+ct.strokeStyle ="#000000";
+
+</script>
+
+
+<script type="text/javascript">
+
+var lives = 9;
+var suchwort = new Array();
+var index=0;
+var wort ="";
+function tiere()
+{
+	tierliste=["KATZE","MAUS","PFERD","AFFE","HUND","KUH","ZIEGE","ELEFANT"];
+	k=Math.round((Math.random() * (tierliste.length-1)));
+	wort=tierliste[k];
+	tabellen(wort);
+}
+
+function pflanzen()
+{
+pflanzenliste=["ROSE","TULPEN","ORCHIDEE","JASMIN","KAMELIE","NELKE","LÄRCHE","MINZE", "PFINGSTROSE","SANDDORN","STIEFMÜTTERCHEN","ZIERAPFEL"];
+	k=Math.round((Math.random() * (pflanzenliste.length-1)));
+	wort=pflanzenliste[k];
+	tabellen(wort);
+}
+
+function obst()
+{
+ var obstliste=["APFEL","ANANAS","KARTOFFEL","KAROTTE","BIRNE","WASSERMELONE","TOMATE","GURKE"];
+	k=Math.round((Math.random() * (obstliste.length-1)));
+	wort=obstliste[k];
+	tabellen(wort);
+}
+
+function others()
+{
+ var liste=["BUCH","AUTO","SCHULE","STRAßE","HAUS","WALD","SCHNEEFLOCKE","HIMMEL","BERG","WASSER","WOLKE"];
+	k=Math.round((Math.random() * (liste.length-1)));
+	wort=liste[k];
+	tabellen(wort);
+}
+
+function zufallWort()
+{
+    var zufall = liste.concat(tierliste,pflanzenliste, obstliste);
+    k=Math.round((Math.random() * (zufall.length-1)));
+	wort=zufall[k];
+	tabellen(wort);
+    alert(wort);
+}
+
+function bstTbl()
+{
+var buchstabenTabelle = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß";
+	for (var i = 0; i < buchstabenTabelle.length; i++) {
+		
+        document.getElementById(buchstabenTabelle[i]).disabled = false;
+         
+    }
+}
+function ausbstTbl()
+{
+var buchstabenTabelle = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß";
+	for (var i = 0; i < buchstabenTabelle.length; i++) {
+		
+        document.getElementById(buchstabenTabelle[i]).disabled = true;
+         
+    }
+}
+
+
+
+function tabellen(word)	
+{
+	if(word == null) {word = "WASSER"; }
+    bstTbl();
+      
+	lives = 9;
+	index=0;
+	ct.clearRect(0, 0, idCanvas.width, idCanvas.height);
+	suchwort = new Array(word.length);
+	var tabelle = '<table> <tr>';
+	document.getElementById('leben').innerHTML = "Leben: " + lives;
+	for(var j=0;j<word.length;j++) 
+	{
+	suchwort[j] = word[j];
+	tabelle += '<td id= "buchstabe' +j+'">_</td>';	
+	}
+	tabelle += '</tr> </table>';
+		document.getElementById('ausgabe').innerHTML = tabelle;
+}
+
+function hinzufuegen(zeichen) 
+{
+   
+    var enthalten=false;
+			
+	for (var i = 0; i < suchwort.length; i++) {
+		if (suchwort[i]==zeichen) {
+			enthalten = true;
+            document.getElementById('buchstabe' + i).innerHTML = zeichen;
+                
+			index++;
+		}
+    }
+     document.getElementById(zeichen).disabled = true;
+		if (!enthalten)
+		{
+		lives--;
+		linie(lives);
+		}
+		
+        if (lives == 0) { document.getElementById('ausgabe').innerHTML = ""; document.getElementById('leben').innerHTML = ""; 	}
+		else { document.getElementById('leben').innerHTML = "Leben: " + lives; }
+		
+		
+        if (index == suchwort.length) { 
+		alert('Sie haben gewonnen!');  
+		for (i = 0; i < suchwort.length; i++) document.getElementById('buchstabe' + i).innerHTML = suchwort[i]; 
+        ausbstTbl();
+		document.getElementById('leben').innerHTML = ""; 
+		
+		}
+       
+     
+    }
+    window.onload = function() {
+    tabellen("IRGENDWAS");
+    
+  // alert("Lass das Spiel beginnen!");
+}
+
+
+</script>
+
+
+
+</body>
+</html>
