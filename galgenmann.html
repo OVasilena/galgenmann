@@ -132,7 +132,9 @@ ct.strokeStyle ="#000000";
 var lives = 9;
 var suchwort = new Array();
 var index=0;
-var wort ="";
+var tierliste,pflanzenliste,obstliste,liste;
+var wort;
+ 
 function tiere()
 {
 	tierliste=["KATZE","MAUS","PFERD","AFFE","HUND","KUH","ZIEGE","ELEFANT"];
@@ -143,7 +145,7 @@ function tiere()
 
 function pflanzen()
 {
-pflanzenliste=["ROSE","TULPEN","ORCHIDEE","JASMIN","KAMELIE","NELKE","LÄRCHE","MINZE", "PFINGSTROSE","SANDDORN","STIEFMÜTTERCHEN","ZIERAPFEL"];
+	pflanzenliste=["ROSE","TULPEN","ORCHIDEE","JASMIN","KAMELIE","NELKE","LÄRCHE","MINZE", "PFINGSTROSE","SANDDORN","STIEFMÜTTERCHEN","ZIERAPFEL"];
 	k=Math.round((Math.random() * (pflanzenliste.length-1)));
 	wort=pflanzenliste[k];
 	tabellen(wort);
@@ -151,7 +153,7 @@ pflanzenliste=["ROSE","TULPEN","ORCHIDEE","JASMIN","KAMELIE","NELKE","LÄRCHE","
 
 function obst()
 {
- var obstliste=["APFEL","ANANAS","KARTOFFEL","KAROTTE","BIRNE","WASSERMELONE","TOMATE","GURKE"];
+	obstliste=["APFEL","ANANAS","KARTOFFEL","KAROTTE","BIRNE","WASSERMELONE","TOMATE","GURKE"];
 	k=Math.round((Math.random() * (obstliste.length-1)));
 	wort=obstliste[k];
 	tabellen(wort);
@@ -159,7 +161,7 @@ function obst()
 
 function others()
 {
- var liste=["BUCH","AUTO","SCHULE","STRAßE","HAUS","WALD","SCHNEEFLOCKE","HIMMEL","BERG","WASSER","WOLKE"];
+	liste=["BUCH","AUTO","SCHULE","STRAßE","HAUS","WALD","SCHNEEFLOCKE","HIMMEL","BERG","WASSER","WOLKE"];
 	k=Math.round((Math.random() * (liste.length-1)));
 	wort=liste[k];
 	tabellen(wort);
@@ -167,11 +169,15 @@ function others()
 
 function zufallWort()
 {
+    tierliste=["KATZE","MAUS","PFERD","AFFE","HUND","KUH","ZIEGE","ELEFANT"];
+    pflanzenliste=["ROSE","TULPEN","ORCHIDEE","JASMIN","KAMELIE","NELKE","LÄRCHE","MINZE", "PFINGSTROSE","SANDDORN","STIEFMÜTTERCHEN","ZIERAPFEL"];
+    obstliste=["APFEL","ANANAS","KARTOFFEL","KAROTTE","BIRNE","WASSERMELONE","TOMATE","GURKE"];
+    liste=["BUCH","AUTO","SCHULE","STRAßE","HAUS","WALD","SCHNEEFLOCKE","HIMMEL","BERG","WASSER","WOLKE"];
     var zufall = liste.concat(tierliste,pflanzenliste, obstliste);
     k=Math.round((Math.random() * (zufall.length-1)));
 	wort=zufall[k];
-	tabellen(wort);
-    alert(wort);
+	return wort;
+
 }
 
 function bstTbl()
@@ -197,7 +203,7 @@ var buchstabenTabelle = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß";
 
 function tabellen(word)	
 {
-	if(word == null) {word = "WASSER"; }
+	if(word == null) {word = zufallWort(); }
     bstTbl();
       
 	lives = 9;
@@ -248,13 +254,9 @@ function hinzufuegen(zeichen)
 		}
        
      
-    }
-    window.onload = function() {
-    tabellen("IRGENDWAS");
-    
-  // alert("Lass das Spiel beginnen!");
 }
-
+	window.onload = tabellen(zufallWort());
+	
 
 </script>
 
