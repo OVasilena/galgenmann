@@ -1,22 +1,21 @@
 import React from 'react';
 import Themes from '../Themes';
-import Result from '../Game/Result';
-import Score from '../Game/Score';
-import Canvas from '../Game/Canvas';
-import Letters from '../Game/Letters';
+import Result from '../Result';
+import Score from '../Score';
+import Game from '../Game';
+import './content.css';
 
 function Content(props) {
 	return (
-		<div>
-			<div>
+		<div className='container'>
+			<div className='game-header'>
 				<Result />
 				<Score />
 			</div>
-			<div>
-				<Canvas />
-				<Letters />
+			<div className='game-content'>
+				<Game />
 			</div>
-			<div>
+			<div className='game-theme'>
 				<Themes />
 			</div>
 		</div>

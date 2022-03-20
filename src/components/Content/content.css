@@ -1,0 +1,16 @@
+/* content styles */
+.container {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+    background-color: #9FCCE0;
+    margin-top: 0.25em;
+}
